@@ -83,7 +83,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease }}
-          className="text-muted-foreground font-semibold tracking-widest uppercase mb-12 text-5xl">PROJECT
+          className="text-muted-foreground font-semibold tracking-widest uppercase mb-12 text-5xl">PROJECTS
 
 
         </motion.h2>

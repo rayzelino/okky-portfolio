@@ -14,10 +14,10 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease }}
-          className="text-foreground font-semibold text-7xl"
-          style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)" }}>
-          
-          Crafting digital
+          className="text-foreground font-semibold text-8xl"
+          style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)" }}>Motion Graphic Designer
+
+
           <br />
           experiences that
           <br />
@@ -29,10 +29,10 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease, delay: 0.1 }}
-          className="mt-8 text-muted-foreground text-lg md:text-xl max-w-xl">
-          
-          A creative portfolio showcasing design, motion, and digital craft
-          at the intersection of art and technology.
+          className="mt-8 text-muted-foreground text-lg md:text-xl max-w-xl">Okky Iskandar
+
+
+
         </motion.p>
 
         <motion.div
