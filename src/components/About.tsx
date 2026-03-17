@@ -11,8 +11,8 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease }}
-          className="text-muted-foreground font-semibold text-sm tracking-widest uppercase mb-12"
-        >
+          className="text-muted-foreground font-semibold tracking-widest uppercase mb-12 text-5xl">
+          
           About Me
         </motion.h2>
 
@@ -23,9 +23,9 @@ const About = () => {
           transition={{
             opacity: { duration: 0.5, ease },
             y: { duration: 0.5, ease },
-            x: { duration: 3, ease: "linear", repeat: Infinity, repeatType: "mirror", delay: 0.8 },
-          }}
-        >
+            x: { duration: 3, ease: "linear", repeat: Infinity, repeatType: "mirror", delay: 0.8 }
+          }}>
+          
           <p className="text-foreground/85 text-xl md:text-2xl leading-relaxed font-normal">
             I'm a digital designer and creative director focused on crafting immersive
             experiences that bridge the gap between aesthetics and function. With over a
@@ -34,8 +34,8 @@ const About = () => {
           </p>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default About;

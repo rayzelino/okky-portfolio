@@ -14,9 +14,9 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease }}
-          className="text-foreground font-semibold"
-          style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)" }}
-        >
+          className="text-foreground font-semibold text-7xl"
+          style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)" }}>
+          
           Crafting digital
           <br />
           experiences that
@@ -29,8 +29,8 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease, delay: 0.1 }}
-          className="mt-8 text-muted-foreground text-lg md:text-xl max-w-xl"
-        >
+          className="mt-8 text-muted-foreground text-lg md:text-xl max-w-xl">
+          
           A creative portfolio showcasing design, motion, and digital craft
           at the intersection of art and technology.
         </motion.p>
@@ -40,20 +40,20 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease, delay: 0.2 }}
-          className="mt-12"
-        >
+          className="mt-12">
+          
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/contact")}
-            className="bg-foreground text-background px-8 py-4 rounded-xl font-medium text-sm tracking-wide transition-colors"
-          >
+            className="bg-foreground text-background px-8 py-4 rounded-xl font-medium text-sm tracking-wide transition-colors">
+            
             Contact Me
           </motion.button>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
