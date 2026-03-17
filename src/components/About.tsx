@@ -1,18 +1,16 @@
 import { motion } from "framer-motion";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-};
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const About = () => {
   return (
     <section className="px-6 md:px-12 py-28 md:py-36">
       <div className="max-w-[1000px] mx-auto">
         <motion.h2
-          {...fadeUp}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease }}
           className="text-muted-foreground font-semibold text-sm tracking-widest uppercase mb-12"
         >
           About Me
@@ -23,8 +21,8 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0, x: [0, -6, 6, 0] }}
           viewport={{ once: true }}
           transition={{
-            opacity: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-            y: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+            opacity: { duration: 0.5, ease },
+            y: { duration: 0.5, ease },
             x: { duration: 3, ease: "linear", repeat: Infinity, repeatType: "mirror", delay: 0.8 },
           }}
         >
