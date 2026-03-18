@@ -11,7 +11,7 @@ const projects = [
 { title: "Editorial — Form", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" }];
 
 
-const VideoCard = ({ title, src, index }: {title: string;src: string;index: number;}) => {
+const VideoCard = ({ src, index }: { title: string; src: string; index: number }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hovered, setHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -26,8 +26,8 @@ const VideoCard = ({ title, src, index }: {title: string;src: string;index: numb
   const handleHover = (enter: boolean) => {
     if (isMobile) return;
     setHovered(enter);
-    if (enter) videoRef.current?.play();else
-    {
+    if (enter) videoRef.current?.play();
+    else {
       videoRef.current?.pause();
       if (videoRef.current) videoRef.current.currentTime = 0;
     }
@@ -42,36 +42,52 @@ const VideoCard = ({ title, src, index }: {title: string;src: string;index: numb
       className="relative aspect-video rounded-[24px] overflow-hidden cursor-pointer group"
       style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 20px 40px -10px rgba(0,0,0,0.5)" }}
       onMouseEnter={() => handleHover(true)}
-      onMouseLeave={() => handleHover(false)}>
-      
+      onMouseLeave={() => handleHover(false)}
+    >
       <video
         ref={videoRef}
         src={src}
-        className="w-full h-full object-cover transition-transform duration-500 ease-expo group-hover:scale-105"
+        className="w-full h-full object-cover transition-transform duration-500 ease-expo"
+        style={{ transform: hovered ? "scale(1.04)" : "scale(1)" }}
         muted
         loop
         playsInline
         autoPlay={isMobile}
-        preload="metadata" />
-      
-      {!isMobile &&
+        preload="metadata"
+      />
+
+      {/* Dark overlay on hover */}
       <div
-        className="absolute inset-0 flex items-center justify-center transition-opacity duration-300"
+        className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
         style={{
-          backgroundColor: hovered ? "rgba(0,0,0,0.25)" : "rgba(0,0,0,0)",
-          opacity: hovered ? 1 : 0
-        }}>
-        
-          <div className="w-16 h-16 rounded-full bg-foreground/90 flex items-center justify-center">
-            <Play size={24} className="text-background ml-1" fill="currentColor" />
+          backgroundColor: "rgba(0,0,0,0.15)",
+          opacity: hovered ? 1 : 0,
+        }}
+      />
+
+      {/* Default: centered play icon */}
+      <div
+        className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 pointer-events-none"
+        style={{ opacity: hovered || isMobile ? 0 : 0.35 }}
+      >
+        <div className="w-14 h-14 rounded-full bg-foreground/80 flex items-center justify-center">
+          <Play size={22} className="text-background ml-0.5" fill="currentColor" />
+        </div>
+      </div>
+
+      {/* Hover: small pause icon bottom-left */}
+      {!isMobile && (
+        <div
+          className="absolute bottom-4 left-4 transition-opacity duration-300 pointer-events-none"
+          style={{ opacity: hovered ? 0.7 : 0 }}
+        >
+          <div className="w-8 h-8 rounded-full bg-foreground/70 flex items-center justify-center">
+            <Pause size={14} className="text-background" fill="currentColor" />
           </div>
         </div>
-      }
-      <div className="absolute bottom-0 left-0 right-0 p-6">
-        <p className="text-foreground text-sm font-medium tracking-wide">{title}</p>
-      </div>
-    </motion.div>);
-
+      )}
+    </motion.div>
+  );
 };
 
 const Projects = () => {
@@ -83,18 +99,18 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease }}
-          className="text-muted-foreground font-semibold tracking-widest uppercase mb-12 text-5xl">PROJECTS
-
-
+          className="text-muted-foreground font-semibold tracking-widest uppercase mb-12 text-5xl"
+        >
+          PROJECTS
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {projects.map((project, i) =>
-          <VideoCard key={project.title} {...project} index={i} />
-          )}
+          {projects.map((project, i) => (
+            <VideoCard key={project.title} {...project} index={i} />
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default Projects;
