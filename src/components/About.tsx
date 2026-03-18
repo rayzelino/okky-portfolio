@@ -26,16 +26,16 @@ const About = () => {
             x: { duration: 3, ease: "linear", repeat: Infinity, repeatType: "mirror", delay: 0.8 }
           }}>
           
-          <p className="text-foreground/85 text-xl md:text-2xl leading-relaxed font-normal">
-            I'm a digital designer and creative director focused on crafting immersive
-            experiences that bridge the gap between aesthetics and function. With over a
-            decade of experience across branding, motion design, and interactive media,
-            I help brands tell stories that resonate and endure.
+          <p className="text-foreground/85 text-xl md:text-2xl leading-relaxed font-normal">I'm Okky Iskandar, Im a professional motion graphic designer specializing in motion graphics and video editing using After Effects and Premiere Pro.Working remotely with local and international clients,im focuses on creating visually engaging and impactful motion visuals that strengthen brand storytelling and digital presence.
+
+
+
+
+
+
+
           </p>
         </motion.div>
       </div>
-    </section>);
-
-};
-
+    </section>);};
 export default About;
