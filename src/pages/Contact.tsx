@@ -36,7 +36,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={18} strokeWidth={1.5} />
-                <span>+1 (555) 000-0000</span>
+                <span>+62 851-5673-8746</span>
               </div>
             </div>
             <motion.a
