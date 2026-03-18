@@ -18,20 +18,18 @@ const FloatingMenu = () => {
       return;
     }
 
+    if (action === "portfolio") {
+      navigate("/portfolio");
+      return;
+    }
+
     if (location.pathname !== "/") {
       navigate("/");
-      setTimeout(() => {
-        if (action === "projects") {
-          document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
       return;
     }
 
     if (action === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (action === "projects") {
-      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
