@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const menuItems = [
   { label: "Home", icon: Home, action: "home" },
-  { label: "Projects", icon: FolderOpen, action: "projects" },
+  { label: "Projects", icon: FolderOpen, action: "portfolio" },
   { label: "Contact", icon: Mail, action: "contact" },
 ];
 
@@ -18,20 +18,18 @@ const FloatingMenu = () => {
       return;
     }
 
+    if (action === "portfolio") {
+      navigate("/portfolio");
+      return;
+    }
+
     if (location.pathname !== "/") {
       navigate("/");
-      setTimeout(() => {
-        if (action === "projects") {
-          document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
       return;
     }
 
     if (action === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (action === "projects") {
-      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
     }
   };
 

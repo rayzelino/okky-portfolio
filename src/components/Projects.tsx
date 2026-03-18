@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, ArrowRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -108,6 +109,21 @@ const Projects = () => {
             <VideoCard key={project.title} {...project} index={i} />
           ))}
         </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease, delay: 0.3 }}
+          className="flex justify-center mt-12"
+        >
+          <Link
+            to="/portfolio"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-secondary-foreground font-medium text-sm tracking-wide hover:bg-secondary/80 transition-colors duration-300"
+          >
+            View All Projects
+            <ArrowRight size={16} />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
