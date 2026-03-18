@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, ArrowRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
