@@ -31,7 +31,8 @@ const Contact = () => {
             <div className="flex flex-col gap-4 text-muted-foreground">
               <div className="flex items-center gap-3">
                 <Mail size={18} strokeWidth={1.5} />
-                <span>hello@portfolio.com</span>
+                <span>okky410410@gmail.com
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={18} strokeWidth={1.5} />
@@ -39,7 +40,6 @@ const Contact = () => {
               </div>
             </div>
             <motion.a
-
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
