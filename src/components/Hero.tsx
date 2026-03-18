@@ -15,13 +15,8 @@ const Hero = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease }}
           className="text-foreground font-semibold text-8xl"
-          style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)" }}>Motion Graphic Designer
-
-
-          <br />
-          experiences that
-          <br />
-          command attention.
+          style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)" }}>
+          {"Motion Graphic Designer"}
         </motion.h1>
 
         <motion.p
