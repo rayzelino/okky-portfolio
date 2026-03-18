@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const menuItems = [
   { label: "Home", icon: Home, action: "home" },
-  { label: "Projects", icon: FolderOpen, action: "projects" },
+  { label: "Projects", icon: FolderOpen, action: "portfolio" },
   { label: "Contact", icon: Mail, action: "contact" },
 ];
 
