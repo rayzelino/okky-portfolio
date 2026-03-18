@@ -1,6 +1,6 @@
 import {
   SiSpotify,
-  SiAdobe,
+  SiAdobecreativecloud,
   SiStripe,
   SiNotion,
   SiFigma,
