@@ -1,26 +1,25 @@
 import {
   SiSpotify,
-  SiAdobecreativecloud,
   SiStripe,
   SiNotion,
   SiFigma,
   SiVercel,
   SiLinear,
   SiRaycast,
-  SiArc,
   SiFramer,
 } from "react-icons/si";
+import { Hexagon, CircleDot } from "lucide-react";
 
 const logos = [
   { name: "Spotify", icon: SiSpotify },
-  { name: "Adobe", icon: SiAdobe },
+  { name: "Adobe", icon: Hexagon },
   { name: "Stripe", icon: SiStripe },
   { name: "Notion", icon: SiNotion },
   { name: "Figma", icon: SiFigma },
   { name: "Vercel", icon: SiVercel },
   { name: "Linear", icon: SiLinear },
   { name: "Raycast", icon: SiRaycast },
-  { name: "Arc", icon: SiArc },
+  { name: "Arc", icon: CircleDot },
   { name: "Framer", icon: SiFramer },
 ];
 
