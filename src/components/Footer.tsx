@@ -22,7 +22,7 @@ const Footer = () => {
         transition={{ duration: 0.5, ease, delay: 0.1 }}
         className="mt-16 text-muted-foreground text-xs"
       >
-        © {new Date().getFullYear()} Portfolio. All rights reserved.
+        {new Date().getFullYear()} ©Rikho Marchelino. All rights reserved.
       </motion.p>
     </footer>
   );
