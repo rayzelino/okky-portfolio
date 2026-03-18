@@ -23,8 +23,8 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease }}
-            className="flex flex-col gap-8 py-4"
-          >
+            className="flex flex-col gap-8 py-4">
+            
             <h1 className="text-foreground font-semibold text-3xl md:text-4xl">
               For business enquiry
             </h1>
@@ -39,13 +39,13 @@ const Contact = () => {
               </div>
             </div>
             <motion.a
-              href="https://wa.me/15550000000"
+
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex w-fit bg-foreground text-background px-8 py-4 rounded-xl font-medium text-sm tracking-wide"
-            >
+              className="inline-flex w-fit bg-foreground text-background px-8 py-4 rounded-xl font-medium text-sm tracking-wide" href="https://wa.me/6285156738746">
+              
               Chat on WhatsApp
             </motion.a>
           </motion.div>
@@ -58,47 +58,47 @@ const Contact = () => {
             className="rounded-[24px] p-8 md:p-10"
             style={{
               backgroundColor: "rgba(255,255,255,0.03)",
-              boxShadow: "0 0 0 1px rgba(255,255,255,0.08)",
-            }}
-          >
+              boxShadow: "0 0 0 1px rgba(255,255,255,0.08)"
+            }}>
+            
             <h2 className="text-foreground font-semibold text-xl mb-8">Prefer forms?</h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-              {(["name", "email", "message"] as const).map((field) => (
-                <div key={field}>
+              {(["name", "email", "message"] as const).map((field) =>
+              <div key={field}>
                   <label className="text-muted-foreground text-xs font-medium tracking-wide uppercase mb-2 block">
                     {field}
                   </label>
-                  {field === "message" ? (
-                    <textarea
-                      value={form[field]}
-                      onChange={(e) => setForm({ ...form, [field]: e.target.value })}
-                      rows={4}
-                      className="w-full bg-transparent border-b border-input focus:border-foreground transition-colors py-3 outline-none text-foreground resize-none"
-                    />
-                  ) : (
-                    <input
-                      type={field === "email" ? "email" : "text"}
-                      value={form[field]}
-                      onChange={(e) => setForm({ ...form, [field]: e.target.value })}
-                      className="w-full bg-transparent border-b border-input focus:border-foreground transition-colors py-3 outline-none text-foreground"
-                    />
-                  )}
+                  {field === "message" ?
+                <textarea
+                  value={form[field]}
+                  onChange={(e) => setForm({ ...form, [field]: e.target.value })}
+                  rows={4}
+                  className="w-full bg-transparent border-b border-input focus:border-foreground transition-colors py-3 outline-none text-foreground resize-none" /> :
+
+
+                <input
+                  type={field === "email" ? "email" : "text"}
+                  value={form[field]}
+                  onChange={(e) => setForm({ ...form, [field]: e.target.value })}
+                  className="w-full bg-transparent border-b border-input focus:border-foreground transition-colors py-3 outline-none text-foreground" />
+
+                }
                 </div>
-              ))}
+              )}
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="mt-4 bg-foreground text-background px-8 py-4 rounded-xl font-medium text-sm tracking-wide w-full"
-              >
+                className="mt-4 bg-foreground text-background px-8 py-4 rounded-xl font-medium text-sm tracking-wide w-full">
+                
                 Send Message
               </motion.button>
             </form>
           </motion.div>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Contact;
