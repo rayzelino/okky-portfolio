@@ -18,13 +18,9 @@ const About = () => {
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0, x: [0, -6, 6, 0] }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{
-            opacity: { duration: 0.5, ease },
-            y: { duration: 0.5, ease },
-            x: { duration: 3, ease: "linear", repeat: Infinity, repeatType: "mirror", delay: 0.8 }
-          }}>
+          transition={{ duration: 0.5, ease }}>
           
           <p className="text-foreground/85 text-xl md:text-2xl leading-relaxed font-normal">I'm Okky Iskandar, Im a professional motion graphic designer specializing in motion graphics and video editing using After Effects and Premiere Pro.Working remotely with local and international clients,im focuses on creating visually engaging and impactful motion visuals that strengthen brand storytelling and digital presence.
 
