@@ -24,11 +24,22 @@ const logos = [
   { name: "Framer", icon: SiFramer },
 ];
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 const LogoTicker = () => {
   const doubled = [...logos, ...logos];
 
   return (
-    <section className="py-20 md:py-28 overflow-hidden">
+    <section className="px-6 md:px-12 py-20 md:py-28 overflow-hidden">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease }}
+        className="text-muted-foreground font-semibold tracking-widest uppercase mb-12 text-5xl max-w-[1000px] mx-auto"
+      >
+        Client & Experience
+      </motion.h2>
       <div className="ticker-mask">
         <div className="animate-ticker flex items-center gap-16 w-max">
           {doubled.map((logo, i) => (
