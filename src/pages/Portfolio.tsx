@@ -7,25 +7,21 @@ import Footer from "@/components/Footer";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const portfolioProjects = [
-{ title: "Brand Film — Nova", description: "A cinematic brand film exploring identity and motion.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
-{ title: "Product Launch — Arc", description: "Dynamic product reveal with fluid transitions.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" },
-{ title: "Campaign — Drift", description: "Visual storytelling for a lifestyle campaign.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" },
-{ title: "Editorial — Form", description: "Abstract motion design for editorial content.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" },
-{ title: "Reel — Pulse", description: "A high-energy montage of recent works.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" },
-{ title: "Short Film — Ember", description: "Experimental short exploring light and texture.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }];
+  { title: "Brand Film — Nova", description: "A cinematic brand film exploring identity and motion.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
+  { title: "Product Launch — Arc", description: "Dynamic product reveal with fluid transitions.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" },
+  { title: "Campaign — Drift", description: "Visual storytelling for a lifestyle campaign.", src: "/videos/Poster.mov", poster: "/videos/Poster.jpeg" },
+  { title: "Editorial — Form", description: "Abstract motion design for editorial content.", src: "/videos/Meglio.mov", poster: "/videos/Meglio.jpeg" },
+  { title: "Reel — Pulse", description: "A high-energy montage of recent works.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" },
+  { title: "Short Film — Ember", description: "Experimental short exploring light and texture.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }];
 
 
 const PortfolioVideoCard = ({
   title,
   description,
   src,
-  index
-
-
-
-
-
-}: {title: string;description: string;src: string;index: number;}) => {
+  index,
+  poster
+}: {title: string; description: string; src: string; index: number; poster?: string}) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
@@ -80,12 +76,15 @@ const PortfolioVideoCard = ({
         <video
           ref={videoRef}
           src={src}
+          poster={poster}
           className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
           style={{ transform: hovered || playing ? "scale(1.04)" : "scale(1)" }}
           muted
           loop
           playsInline
-          preload="metadata" />
+          preload="metadata"
+          controlsList="nodownload nofullscreen noplaybackrate"
+          disablePictureInPicture />
         
 
         {/* Hover blur + dim overlay */}
