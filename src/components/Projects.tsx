@@ -13,7 +13,7 @@ const projects = [
 ];
 
 
-const VideoCard = ({ src, index }: { title: string; src: string; index: number }) => {
+const VideoCard = ({ src, index, poster }: { title: string; src: string; index: number; poster?: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hovered, setHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
