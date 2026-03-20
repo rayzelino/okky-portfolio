@@ -19,12 +19,8 @@ const PortfolioVideoCard = ({
   title,
   description,
   src,
-  index
-
-
-
-
-
+  index,
+  poster
 }: {title: string; description: string; src: string; index: number; poster?: string}) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
