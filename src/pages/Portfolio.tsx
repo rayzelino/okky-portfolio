@@ -25,7 +25,7 @@ const PortfolioVideoCard = ({
 
 
 
-}: {title: string;description: string;src: string;index: number;}) => {
+}: {title: string; description: string; src: string; index: number; poster?: string}) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
