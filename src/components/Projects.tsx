@@ -49,6 +49,7 @@ const VideoCard = ({ src, index, poster }: { title: string; src: string; index: 
       <video
         ref={videoRef}
         src={src}
+        poster={poster}
         className="w-full h-full object-cover transition-transform duration-500 ease-expo"
         style={{ transform: hovered ? "scale(1.04)" : "scale(1)" }}
         muted
