@@ -46,11 +46,20 @@ const VideoCard = ({ src, index, poster }: { title: string; src: string; index: 
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
     >
+      {/* Poster image overlay */}
+      {poster && (
+        <img
+          src={poster}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 pointer-events-none"
+          style={{ opacity: hovered || isMobile ? 0 : 1, zIndex: 1 }}
+        />
+      )}
+
       <video
         ref={videoRef}
         src={src}
-        poster={poster}
-        className="w-full h-full object-cover transition-transform duration-500 ease-expo"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-expo"
         style={{ transform: hovered ? "scale(1.04)" : "scale(1)" }}
         muted
         loop
