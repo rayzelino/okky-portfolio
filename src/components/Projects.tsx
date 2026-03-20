@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const projects = [
-  { title: "Logo Sharelock Bang", src: "/videos/Logo_Sharelock_Bang.mp4" },
-  { title: "Animation 1", src: "/videos/Animation_1.mp4" },
-  { title: "Animation 2", src: "/videos/Animation_2.mp4" },
-  { title: "With SFX", src: "/videos/WITH_SFX.mp4" },
+  { title: "Logo Sharelock Bang", src: "/videos/Logo_Sharelock_Bang.mp4", poster: "/videos/poster-sharelock.jpeg" },
+  { title: "Animation 1", src: "/videos/Animation_1.mp4", poster: "/videos/poster-animation1.jpeg" },
+  { title: "Animation 2", src: "/videos/Animation_2.mp4", poster: "/videos/poster-animation2.jpeg" },
+  { title: "With SFX", src: "/videos/WITH_SFX.mp4", poster: "/videos/poster-sfx.jpeg" },
 ];
 
 
-const VideoCard = ({ src, index }: { title: string; src: string; index: number }) => {
+const VideoCard = ({ src, index, poster }: { title: string; src: string; index: number; poster?: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hovered, setHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -49,6 +49,7 @@ const VideoCard = ({ src, index }: { title: string; src: string; index: number }
       <video
         ref={videoRef}
         src={src}
+        poster={poster}
         className="w-full h-full object-cover transition-transform duration-500 ease-expo"
         style={{ transform: hovered ? "scale(1.04)" : "scale(1)" }}
         muted
