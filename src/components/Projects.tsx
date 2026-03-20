@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const projects = [
-  { title: "Logo Sharelock Bang", src: "/videos/Logo_Sharelock_Bang.mp4" },
-  { title: "Animation 1", src: "/videos/Animation_1.mp4" },
-  { title: "Animation 2", src: "/videos/Animation_2.mp4" },
-  { title: "With SFX", src: "/videos/WITH_SFX.mp4" },
+  { title: "Logo Sharelock Bang", src: "/videos/Logo_Sharelock_Bang.mp4", poster: "/videos/poster-sharelock.jpeg" },
+  { title: "Animation 1", src: "/videos/Animation_1.mp4", poster: "/videos/poster-animation1.jpeg" },
+  { title: "Animation 2", src: "/videos/Animation_2.mp4", poster: "/videos/poster-animation2.jpeg" },
+  { title: "With SFX", src: "/videos/WITH_SFX.mp4", poster: "/videos/poster-sfx.jpeg" },
 ];
 
 
