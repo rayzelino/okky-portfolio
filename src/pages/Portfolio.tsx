@@ -9,8 +9,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const portfolioProjects = [
   { title: "Brand Film — Nova", description: "A cinematic brand film exploring identity and motion.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
   { title: "Product Launch — Arc", description: "Dynamic product reveal with fluid transitions.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" },
-  { title: "Campaign — Drift", description: "Visual storytelling for a lifestyle campaign.", src: "/videos/Poster.mov", poster: "/videos/Poster.jpeg" },
-  { title: "Editorial — Form", description: "Abstract motion design for editorial content.", src: "/videos/Meglio.mov", poster: "/videos/Meglio.jpeg" },
+  { title: "Poster", description: "Visual storytelling for a lifestyle campaign.", src: "/videos/Poster.mov", poster: "/videos/Poster.jpeg" },
+  { title: "Video Interactive", description: "Abstract motion design for editorial content.", src: "/videos/Meglio.mov", poster: "/videos/Meglio.jpeg" },
   { title: "Reel — Pulse", description: "A high-energy montage of recent works.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" },
   { title: "Short Film — Ember", description: "Experimental short exploring light and texture.", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }];
 
