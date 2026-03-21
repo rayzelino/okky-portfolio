@@ -79,7 +79,7 @@ const VideoCard = ({ src, index, poster }: { title: string; src: string; index: 
 
       {/* Default: centered play icon */}
       <div
-        className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 pointer-events-none"
+        className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 pointer-events-none z-10"
         style={{ opacity: hovered || isMobile ? 0 : 0.35 }}
       >
         <div className="w-14 h-14 rounded-full bg-foreground/80 flex items-center justify-center">
