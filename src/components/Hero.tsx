@@ -56,13 +56,13 @@ const Hero = () => {
             <img
               src={heroPhoto}
               alt="Okky Iskandar"
-              className="w-full h-full object-cover object-top"
-            />
+              className="w-full h-full object-top object-contain" />
+            
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
