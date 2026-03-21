@@ -1,16 +1,24 @@
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import FloatingMenu from "@/components/FloatingMenu";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [showWarning, setShowWarning] = useState(false);
+  const [shakeKey, setShakeKey] = useState(0);
+  const hasShown = useRef(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setForm({ name: "", email: "", message: "" });
+    if (!hasShown.current) {
+      setShowWarning(true);
+      hasShown.current = true;
+    } else {
+      setShakeKey((k) => k + 1);
+    }
   };
 
   return (
