@@ -52,7 +52,7 @@ const VideoCard = ({ src, index, poster }: { title: string; src: string; index: 
           src={poster}
           alt=""
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 pointer-events-none"
-          style={{ opacity: hovered || isMobile ? 0 : 1, zIndex: 1 }}
+          style={{ opacity: hovered || isMobile ? 0 : 1, zIndex: 2 }}
         />
       )}
 
