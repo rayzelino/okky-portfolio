@@ -68,7 +68,7 @@ const PortfolioVideoCard = ({
       
       {/* Video container */}
       <div
-        className="relative aspect-[16/10] overflow-hidden cursor-pointer"
+        className="relative aspect-video overflow-hidden cursor-pointer"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={togglePlay}>
