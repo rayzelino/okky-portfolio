@@ -56,7 +56,7 @@ const FloatingMenu = () => {
         <button
           key={item.label}
           onClick={() => handleClick(item.action)}
-          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-250 text-sm font-medium tracking-wide"
+          className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground hover:text-foreground transition-colors duration-250 text-xs sm:text-sm font-medium tracking-wide"
         >
           <item.icon size={18} strokeWidth={1.5} />
           <span>{item.label}</span>
