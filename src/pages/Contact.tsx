@@ -93,11 +93,24 @@ const Contact = () => {
                 }
                 </div>
               )}
+              {showWarning && (
+                <motion.p
+                  key={shakeKey}
+                  initial={shakeKey === 0 ? { opacity: 0, x: -8 } : { opacity: 1, x: -4 }}
+                  animate={{ opacity: 1, x: [shakeKey > 0 ? -4 : 0, 4, -3, 2, 0] }}
+                  transition={{ duration: shakeKey === 0 ? 0.5 : 0.4, ease: "easeOut" }}
+                  className="text-destructive text-sm font-medium"
+                >
+                  This form is temporarily unavailable.
+                  <br />
+                  Please contact me via WhatsApp for immediate assistance.
+                </motion.p>
+              )}
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="mt-4 bg-foreground text-background px-8 py-4 rounded-xl font-medium text-sm tracking-wide w-full">
+                className="bg-foreground text-background px-8 py-4 rounded-xl font-medium text-sm tracking-wide w-full">
                 
                 Send Message
               </motion.button>
