@@ -12,6 +12,13 @@ const FloatingMenu = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const scrollToProjects = () => {
+    const el = document.getElementById("projects");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const handleClick = (action: string) => {
     if (action === "contact") {
       navigate("/contact");
@@ -19,7 +26,11 @@ const FloatingMenu = () => {
     }
 
     if (action === "portfolio") {
-      navigate("/portfolio");
+      if (location.pathname === "/") {
+        scrollToProjects();
+      } else {
+        navigate("/", { state: { scrollTo: "projects" } });
+      }
       return;
     }
 
