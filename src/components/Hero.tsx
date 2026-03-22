@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center px-6 md:px-12">
-      <div className="max-w-[1200px] w-full mx-auto py-32 flex flex-row items-center justify-between gap-6 md:gap-12">
+      <div className="max-w-[1200px] w-full mx-auto py-32 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 md:gap-12">
         <div className="flex-1 min-w-0">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -51,13 +51,12 @@ const Hero = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease, delay: 0.3 }}
-          className="flex-shrink-0">
-          <div className="w-36 h-48 sm:w-48 sm:h-60 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg shadow-foreground/5 bg-card border border-border/50">
+          className="flex-shrink-0 self-center sm:self-auto">
+          <div className="w-28 h-36 sm:w-48 sm:h-60 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg shadow-foreground/5 bg-card border border-border/50">
             <img
               src={heroPhoto}
               alt="Okky Iskandar"
               className="w-full h-full object-top object-contain" />
-            
           </div>
         </motion.div>
       </div>
