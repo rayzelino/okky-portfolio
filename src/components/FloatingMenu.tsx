@@ -49,7 +49,7 @@ const FloatingMenu = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-4 sm:top-8 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 z-50 h-10 sm:h-12 px-3 sm:px-6 rounded-full bg-glass backdrop-blur-md shadow-2xl gap-2 sm:gap-6 text-center flex-row flex items-center justify-center"
+      className="fixed top-4 sm:top-8 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 z-50 h-10 sm:h-12 px-3 sm:px-6 rounded-full bg-glass backdrop-blur-md shadow-2xl sm:gap-6 text-center flex-row flex items-center justify-center gap-[4px]"
       style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.1), 0 20px 40px -10px rgba(0,0,0,0.5)" }}>
       
       {menuItems.map((item) =>
