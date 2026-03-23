@@ -51,7 +51,7 @@ const Hero = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease, delay: 0.3 }}
-          className="flex-shrink-0 self-center sm:self-auto">
+          className="flex-shrink-0 self-start sm:self-auto">
           <div className="w-28 h-36 sm:w-48 sm:h-60 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-lg shadow-foreground/5 bg-card border border-border/50">
             <img
               src={heroPhoto}
