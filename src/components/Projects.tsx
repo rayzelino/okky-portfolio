@@ -104,7 +104,7 @@ const VideoCard = ({ src, index, poster }: { title: string; src: string; index: 
 
 const Projects = () => {
   return (
-    <section id="projects" className="px-6 md:px-12 py-28 md:py-36">
+    <section id="projects" className="py-28 md:py-36" style={{ padding: "7rem clamp(1.5rem, 4vw, 4rem)" }}>
       <div className="max-w-[1200px] mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

@@ -4,7 +4,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const Footer = () => {
   return (
-    <footer className="px-6 md:px-12 py-32 md:py-40 text-center">
+    <footer className="py-32 md:py-40 text-center" style={{ padding: "8rem clamp(1.5rem, 4vw, 4rem)" }}>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

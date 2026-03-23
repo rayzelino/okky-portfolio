@@ -8,7 +8,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="min-h-screen flex items-center px-6 md:px-12">
+    <section className="min-h-screen flex items-center" style={{ padding: "0 clamp(1.5rem, 4vw, 4rem)" }}>
       <div className="max-w-[1200px] w-full mx-auto py-32 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 md:gap-12">
         <div className="flex-1 min-w-0">
           <motion.h1
@@ -26,7 +26,7 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease, delay: 0.1 }}
-            className="mt-4 md:mt-8 text-muted-foreground text-base md:text-xl max-w-xl">
+            className="mt-4 md:mt-8 text-muted-foreground text-base md:text-xl max-w-[65ch]">
             Okky Iskandar
           </motion.p>
 
