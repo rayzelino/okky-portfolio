@@ -8,7 +8,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="min-h-screen flex items-center px-6 md:px-12">
+    <section className="min-h-screen flex items-center" style={{ padding: "0 clamp(1.5rem, 4vw, 4rem)" }}>
       <div className="max-w-[1200px] w-full mx-auto py-32 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 md:gap-12">
         <div className="flex-1 min-w-0">
           <motion.h1
