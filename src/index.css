@@ -55,8 +55,10 @@
     line-height: 1.1;
   }
   p {
-    line-height: 1.6;
+    line-height: 1.65;
     text-wrap: pretty;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 }
 

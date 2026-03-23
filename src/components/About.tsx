@@ -22,11 +22,8 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease }}>
           
-          <p className="text-foreground/85 text-xl md:text-2xl leading-relaxed font-normal">I'm Okky Iskandar, Im a professional motion graphic designer specializing in motion graphics and video editing using After Effects and Premiere Pro.Working remotely with local and international clients,im focuses on creating visually engaging and impactful motion visuals that strengthen brand storytelling and digital presence.
-
-
-
-
+          <p className="text-foreground/85 text-xl md:text-2xl leading-relaxed font-normal max-w-[65ch]" style={{ wordBreak: "normal", overflowWrap: "break-word", hyphens: "auto" }}>
+            I'm Okky Iskandar, a professional motion graphic designer specializing in motion graphics and video editing using After Effects and Premiere Pro. Working remotely with local and international clients, I focus on creating visually engaging and impactful motion visuals that strengthen brand storytelling and digital presence.
 
 
 
