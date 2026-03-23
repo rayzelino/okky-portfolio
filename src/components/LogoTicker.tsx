@@ -30,7 +30,7 @@ const LogoTicker = () => {
   const doubled = [...logos, ...logos];
 
   return (
-    <section className="px-6 md:px-12 py-20 md:py-28 overflow-hidden">
+    <section className="py-20 md:py-28 overflow-hidden" style={{ padding: "5rem clamp(1.5rem, 4vw, 4rem)" }}>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
