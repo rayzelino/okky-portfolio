@@ -5,7 +5,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const About = () => {
   return (
     <section className="px-6 md:px-12 py-28 md:py-36">
-      <div className="max-w-[1000px] mx-auto">
+      <div className="max-w-[1200px] mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
