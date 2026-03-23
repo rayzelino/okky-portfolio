@@ -26,7 +26,7 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease, delay: 0.1 }}
-            className="mt-4 md:mt-8 text-muted-foreground text-base md:text-xl max-w-xl">
+            className="mt-4 md:mt-8 text-muted-foreground text-base md:text-xl max-w-[65ch]">
             Okky Iskandar
           </motion.p>
 
