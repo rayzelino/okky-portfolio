@@ -54,7 +54,11 @@
     letter-spacing: -0.04em;
     line-height: 1.1;
   }
-  p {
+/* Hide scrollbar for thumbnail rows */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+p {
     line-height: 1.65;
     text-wrap: pretty;
     word-break: normal;
