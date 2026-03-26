@@ -13,7 +13,6 @@ export interface VideoItem {
 export interface CategoryCard {
   category: string;
   videos: VideoItem[];
-  orientation?: "horizontal" | "vertical"; // ✅ NEW
 }
 
 interface PortfolioVideoCardProps {
@@ -65,6 +64,7 @@ const PortfolioVideoCard = ({ card, index }: PortfolioVideoCardProps) => {
     setActiveIndex(idx);
   };
 
+  // Reset video when active source changes
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.load();
@@ -84,13 +84,9 @@ const PortfolioVideoCard = ({ card, index }: PortfolioVideoCardProps) => {
           "0 0 0 1px hsl(var(--border)), 0 20px 40px -10px rgba(0,0,0,0.4)",
       }}
     >
-      {/* VIDEO */}
+      {/* Video container */}
       <div
-        className={`relative overflow-hidden cursor-pointer ${
-          card.orientation === "vertical"
-            ? "aspect-[9/16]"
-            : "aspect-video"
-        }`}
+        className="relative aspect-video overflow-hidden cursor-pointer"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={togglePlay}
@@ -107,11 +103,13 @@ const PortfolioVideoCard = ({ card, index }: PortfolioVideoCardProps) => {
           loop
           playsInline
           preload="metadata"
+          controlsList="nodownload nofullscreen noplaybackrate"
+          disablePictureInPicture
         />
 
         {/* Overlay */}
         <div
-          className="absolute inset-0 transition-all duration-400 pointer-events-none"
+          className="absolute inset-0 transition-all duration-400 ease-in-out pointer-events-none"
           style={{
             backgroundColor: "rgba(0,0,0,0.2)",
             backdropFilter:
@@ -120,17 +118,34 @@ const PortfolioVideoCard = ({ card, index }: PortfolioVideoCardProps) => {
           }}
         />
 
-        {/* Play */}
+        {/* Play button */}
         <AnimatePresence>
           {!playing && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              className="absolute inset-0 flex items-center justify-center"
+              transition={{ duration: 0.25 }}
+              className="absolute inset-0 flex items-center justify-center pointer-events-none"
             >
-              <div className="w-14 h-14 rounded-full flex items-center justify-center bg-foreground/70">
-                <Play size={22} className="text-background ml-0.5" fill="currentColor" />
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300"
+                style={{
+                  backgroundColor: hovered
+                    ? "hsl(var(--foreground))"
+                    : "hsl(var(--foreground) / 0.5)",
+                }}
+              >
+                <Play
+                  size={22}
+                  className="ml-0.5 transition-colors duration-300"
+                  style={{
+                    color: hovered
+                      ? "hsl(var(--background))"
+                      : "hsl(var(--background) / 0.9)",
+                  }}
+                  fill="currentColor"
+                />
               </div>
             </motion.div>
           )}
@@ -140,37 +155,51 @@ const PortfolioVideoCard = ({ card, index }: PortfolioVideoCardProps) => {
         <AnimatePresence>
           {playing && (
             <>
-              <div className="absolute bottom-3 left-3">
-                <div className="w-8 h-8 rounded-full bg-foreground/70 flex items-center justify-center">
-                  <Pause size={14} className="text-background" fill="currentColor" />
-                </div>
-              </div>
-
-              <div
-                className="absolute bottom-3 right-3 z-10 cursor-pointer"
-                onClick={toggleExpand}
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 0.8, y: 0 }}
+                exit={{ opacity: 0, y: 8 }}
+                transition={{ duration: 0.25 }}
+                className="absolute bottom-3 left-3 pointer-events-none"
               >
                 <div className="w-8 h-8 rounded-full bg-foreground/70 flex items-center justify-center">
+                  <Pause
+                    size={14}
+                    className="text-background"
+                    fill="currentColor"
+                  />
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 0.8, y: 0 }}
+                exit={{ opacity: 0, y: 8 }}
+                transition={{ duration: 0.25 }}
+                className="absolute bottom-3 right-3 z-10"
+                onClick={toggleExpand}
+              >
+                <div className="w-8 h-8 rounded-full bg-foreground/70 flex items-center justify-center cursor-pointer hover:bg-foreground/90 transition-colors">
                   {expanded ? (
                     <Minimize2 size={14} className="text-background" />
                   ) : (
                     <Maximize2 size={14} className="text-background" />
                   )}
                 </div>
-              </div>
+              </motion.div>
             </>
           )}
         </AnimatePresence>
       </div>
 
-      {/* TEXT + THUMBNAIL */}
-      <div className="p-4 flex flex-col gap-3">
-        <h3 className="text-foreground font-semibold text-lg">
+      {/* Title + Thumbnails */}
+      <div className="p-4 md:p-5 flex flex-col gap-3">
+        <h3 className="text-foreground font-semibold text-lg tracking-tight">
           {card.category}
         </h3>
 
         {card.videos.length > 1 && (
-          <div className="flex gap-2 overflow-x-auto">
+          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
             {card.videos.map((video, idx) => (
               <button
                 key={idx}
@@ -178,25 +207,29 @@ const PortfolioVideoCard = ({ card, index }: PortfolioVideoCardProps) => {
                   e.stopPropagation();
                   handleThumbnailClick(idx);
                 }}
-                className="rounded-lg overflow-hidden"
+                className="relative flex-shrink-0 rounded-lg overflow-hidden transition-all duration-200 focus:outline-none"
                 style={{
-                  width: card.orientation === "vertical" ? 56 : 72,
-                  height: card.orientation === "vertical" ? 100 : 44,
+                  width: 72,
+                  height: 44,
                   opacity: idx === activeIndex ? 1 : 0.5,
                   border:
                     idx === activeIndex
                       ? "2px solid hsl(var(--primary))"
                       : "2px solid transparent",
+                  transform:
+                    idx === activeIndex ? "scale(1)" : "scale(0.95)",
                 }}
+                title={video.label}
               >
                 {video.poster ? (
                   <img
                     src={video.poster}
+                    alt={video.label}
                     className="w-full h-full object-cover"
                   />
                 ) : (
                   <div className="w-full h-full bg-muted flex items-center justify-center">
-                    <Play size={12} />
+                    <Play size={12} className="text-muted-foreground" />
                   </div>
                 )}
               </button>
